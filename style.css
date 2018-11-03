@@ -1,0 +1,77 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body {
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    color: #555;
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+    color: #333;
+}
+
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 6px 18px;
+    margin-left: 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.fretboard {
+    position: relative;
+}
+
+.tuning,
+.fretnum {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    text-transform: uppercase;
+}
+
+.tuning {
+    left: 8px;
+    font-size: 10px;
+}
+
+.fretnum {
+    font-size: 8px;
+}
+
+.some-class {
+    float: left;
+    clear: none;
+    width: 150;
+}
+
+label {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 0 10px 0 6px;
+}
+
+input[type=radio],
+input.radio {
+    float: left;
+    clear: none;
+    /* margin: 2px 0 0 2px; */
+}
+
+.notes-info {
+    font-weight: bold;
+}
+
+.scale-name {
+    text-align: center;
+
+}
