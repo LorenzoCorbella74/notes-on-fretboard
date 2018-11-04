@@ -1,6 +1,6 @@
 # Sovrapposizione scale/arpeggi
 
-![arena](screen.png)
+![tastiera](/screen.png)
 
 Tool che permette di affiancare verticalmente più tastiere di chitarra per lo studio delle sovrapposizioni delle scale/arpeggi. La visualizzazione della tastiera tramite d3.js è basata sulla preziosa libreria [fretboard](https://github.com/txels/fretboard).
 
