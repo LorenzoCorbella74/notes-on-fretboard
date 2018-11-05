@@ -1,12 +1,35 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
-body {
-    margin: 0 auto;
-    max-width: 50em;
+
+html {
+    box-sizing: border-box;
+    background:url('https://unsplash.it/1280/1280/?image=1053') center no-repeat; /* Lista delle img: https://picsum.photos/images */
+    background-size:cover;
+    min-height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*font-family: Futura,"Trebuchet MS",Arial,sans-serif */
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+  *, *:before, *:after {box-sizing: inherit; }
+
+  .wrapper {
+    padding: 20px;
+    max-width: 80em;
     line-height: 1.5;
     color: #555;
-}
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+  }
+
+/* body {
+    margin: 0 auto;
+    max-width: 50em;
+    line-height: 1.5;
+    color: #555;
+} */
 
 h2 {
     margin-top: 1em;
@@ -19,7 +42,7 @@ h2 {
     border: none;
     color: white;
     padding: 6px 18px;
-    margin-left: 40px;
+    margin-left: 0px;
     text-align: center;
     text-decoration: none;
     font-size: 12px;

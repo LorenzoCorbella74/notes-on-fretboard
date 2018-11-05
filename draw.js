@@ -29,6 +29,8 @@ var Scales = {
     "dom-pentatonic":        "c e f g bb",         // R 3 4 5 b7
     "dorian":                "c d eb f g a bb",
     "dorian-pentatonic":     "c eb f g a",         // R b3 4 5 6
+    "minor6th-blues-pentatonic":"c eb f# g a",     // R b3 4# 5 6
+    "rootless9th-pentatonic":"d eb f g bb",        // 2 b3 4 5 7b
     "aeolian":               "c d eb f g ab bb",
     "minor-pentatonic":      "c eb f g bb",
     "minor-blues":           "c eb f f# g bb",
@@ -37,6 +39,9 @@ var Scales = {
     "locrian":               "c db eb f gb ab bb",
     "locrian-pentatonic":    "c eb f gb bb",      // R b3 4 b5 b7
     "japanese":              "c db f g ab",
+    "melodic-minor":         "c d eb f g a b",
+    "armonic-minor":         "c d eb f g ab b",
+    "whole-tone":            "c d e f# g# a#",
     _: function (scale) {
         return Scales[scale].split(" ");
     },
@@ -134,7 +139,9 @@ function asDegree(nomescala) {
         case 'mixolydian-pentatonic': output ='T 9 3 5 7b';break;
         case 'dom-pentatonic': output ='T 3 4 5 7b';break;
         case 'dorian': output ='T 9 3b 4 5 6 7b';break;
-        case 'dorian-pentatonic': output ='T 9 3b 4 5 6 7b';break; // R b3 4 5 6
+        case 'dorian-pentatonic': output ='T 3b 4 5 6';break; // R b3 4 5 6
+        case 'minor6th-blues-pentatonic': output ='T 3b 4# 5 6';break; // R b3 4 5 6
+        case 'rootless9th-pentatonic': output ='9 3b 4 5 7b';break; // R b3 4 5 6
         case 'aeolian': output ='T 9 3b 4 5 6b 7b';break;
         case 'minor-pentatonic': output ='T 3b 4 5 7b';break;
         case 'minor-blues': output ='T 3b 4 4# 5 7b';break;
@@ -143,6 +150,9 @@ function asDegree(nomescala) {
         case 'locrian': output ='T 9b 3b 4 5b 6b 7b';break;
         case 'locrian-pentatonic': output ='T 3b 4 5b 7b';break; // R b3 4 b5 b7
         case 'japanese': output ='T 2b 4 5 6b';break; // R b3 4 b5 b7
+        case 'melodic-minor': output ='T 2 3b 4 5 6 7';break;     
+        case 'armonic-minor': output ='T 2 3b 4 5 6b 7';break;     
+        case 'whole-tone': output ='T 2 3 4# 5# 6#';break;     
         default:break;
     }
     return output;
@@ -212,7 +222,7 @@ var Fretboard = function (config) {
     // si crea l'istanza SVG
     instance.makeContainer = function () {
         return d3
-            .select("body")
+            .select(".wrapper")
             .append("div")
             .attr("class", "fretboard")
             .attr("id", instance.id) // id è nell'istanza
@@ -225,7 +235,7 @@ var Fretboard = function (config) {
         d3.select("#" + instance.id)
                 .append("div")
                 .attr("class", "scale-name")
-                .text(`${instance.name.toUpperCase()}  / Notes:  ${instance.notes.toUpperCase()}  / Degrees:  ${instance.gradi.toUpperCase()}`)
+                .text(`${instance.name.toUpperCase()}  /  Notes:  ${instance.notes.toUpperCase()}  /  Degrees:  ${instance.gradi}`)
                 .on("click", function (d) {
                     instance.delete(instance.id);
                 });
