@@ -25,7 +25,7 @@ var Scales = {
     "major-pentatonic":      "c d e g a",
     "major-blues":           "c d d# e g a",
     "mixolydian":            "c d e f g a bb",
-   ' mixolydian-pentatonic': "c d e g bb",         // R 2 3 5 b7
+    'mixolydian-pentatonic': "c d e g bb",         // R 2 3 5 b7
     "dom-pentatonic":        "c e f g bb",         // R 3 4 5 b7
     "dorian":                "c d eb f g a bb",
     "dorian-pentatonic":     "c eb f g a",         // R b3 4 5 6
@@ -33,7 +33,7 @@ var Scales = {
     "minor-pentatonic":      "c eb f g bb",
     "minor-blues":           "c eb f f# g bb",
     "phrygian":              "c db eb f g ab bb",
-   " phrygian-pentatonic":   "c db f g bb",       // R b2 4 5 b7
+    "phrygian-pentatonic":   "c db f g bb",       // R b2 4 5 b7
     "locrian":               "c db eb f gb ab bb",
     "locrian-pentatonic":    "c eb f gb bb",      // R b3 4 b5 b7
     "japanese":              "c db f g ab",
