@@ -2,7 +2,7 @@
 
 ![tastiera](screen.PNG)
 
-Tool che permette di affiancare verticalmente più tastiere di chitarra per lo studio delle sovrapposizioni delle scale/arpeggi. La visualizzazione della tastiera tramite d3.js è basata sulla preziosa libreria [fretboard](https://github.com/txels/fretboard).
+Tool che permette di affiancare verticalmente più tastiere di chitarra per lo studio delle sovrapposizioni delle scale/arpeggi. La visualizzazione della tastiera tramite d3.js è basata sulla preziosa libreria [fretboard](https://github.com/txels/fretboard). Per una demo seguire il [link](https://lorenzocorbella74.github.io/notes-on-fretboard/).
 
 ## Features
 - [x] scelta di scale o arpeggi 

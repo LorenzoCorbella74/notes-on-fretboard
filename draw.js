@@ -19,19 +19,24 @@ var Scales = {
     m7b5: "c eb gb bb",
     dim7: "c eb gb a",
     // scales
-    lydian: "c d e f# g a b",
-    major: "c d e f g a b",
-    mixolydian: "c d e f g a bb",
-    dorian: "c d eb f g a bb",
-    aeolian: "c d eb f g ab bb",
-    phrygian: "c db eb f g ab bb",
-    locrian: "c db eb f gb ab bb",
-    "minor-pentatonic": "c eb f g bb",
-    "minor-blues": "c eb f f# g bb",
-    "major-pentatonic": "c d e g a",
-    "major-blues": "c d d# e g a",
-    "dom-pentatonic": "c e f g bb",
-    japanese: "c db f g ab",
+    "lydian":                "c d e f# g a b",
+    "lydian-pentatonic":     "c d e f# a",          // R 2 3 #4 6
+    "major-ionian":          "c d e f g a b",
+    "major-pentatonic":      "c d e g a",
+    "major-blues":           "c d d# e g a",
+    "mixolydian":            "c d e f g a bb",
+   ' mixolydian-pentatonic': "c d e g bb",         // R 2 3 5 b7
+    "dom-pentatonic":        "c e f g bb",         // R 3 4 5 b7
+    "dorian":                "c d eb f g a bb",
+    "dorian-pentatonic":     "c eb f g a",         // R b3 4 5 6
+    "aeolian":               "c d eb f g ab bb",
+    "minor-pentatonic":      "c eb f g bb",
+    "minor-blues":           "c eb f f# g bb",
+    "phrygian":              "c db eb f g ab bb",
+   " phrygian-pentatonic":   "c db f g bb",       // R b2 4 5 b7
+    "locrian":               "c db eb f gb ab bb",
+    "locrian-pentatonic":    "c eb f gb bb",      // R b3 4 b5 b7
+    "japanese":              "c db f g ab",
     _: function (scale) {
         return Scales[scale].split(" ");
     },
@@ -121,16 +126,23 @@ function asDegree(nomescala) {
         case 'min7': output ='T 3b 5 7b';break;
         // scale
         case 'lydian': output ='T 9 3 4# 5 6 7';break;
-        case 'major': output ='T 9 3 4 5 6 7';break;
-        case 'mixolydian': output ='T 9 3 4 5 6 7b';break;
-        case 'dorian': output ='T 9 3b 4 5 6 7b';break;
-        case 'aeolian': output ='T 9 3b 4 5 6b 7b';break;
-        case 'phrygian': output ='T 9b 3b 4 5 6b 7b';break;
-        case 'locrian': output ='T 9b 3b 4 5b 6b 7b';break;
-        case 'minor-pentatonic': output ='T 3b 4 5 7b';break;
-        case 'minor-blues': output ='T 3b 4 4# 5 7b';break;
+        case 'lydian-pentatonic': output ='T 9 3 4# 6';break;       // R 2 3 #4 6
+        case 'major-ionian': output ='T 9 3 4 5 6 7';break;
         case 'major-pentatonic': output ='T 9 3 5 6';break;
         case 'major-blues': output ='T 9 3b 3 5 6';break;
+        case 'mixolydian': output ='T 9 3 4 5 6 7b';break;
+        case 'mixolydian-pentatonic': output ='T 9 3 5 7b';break;
+        case 'dom-pentatonic': output ='T 3 4 5 7b';break;
+        case 'dorian': output ='T 9 3b 4 5 6 7b';break;
+        case 'dorian-pentatonic': output ='T 9 3b 4 5 6 7b';break; // R b3 4 5 6
+        case 'aeolian': output ='T 9 3b 4 5 6b 7b';break;
+        case 'minor-pentatonic': output ='T 3b 4 5 7b';break;
+        case 'minor-blues': output ='T 3b 4 4# 5 7b';break;
+        case 'phrygian': output ='T 9b 3b 4 5 6b 7b';break;
+        case 'phrygian-pentatonic': output ='T 9b 4 5 7b';break; // R b2 4 5 b7
+        case 'locrian': output ='T 9b 3b 4 5b 6b 7b';break;
+        case 'locrian-pentatonic': output ='T 3b 4 5b 7b';break; // R b3 4 b5 b7
+        case 'japanese': output ='T 2b 4 5 6b';break; // R b3 4 b5 b7
         default:break;
     }
     return output;
