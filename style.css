@@ -3,26 +3,32 @@
 
 html {
     box-sizing: border-box;
-    background:url('https://unsplash.it/1280/1280/?image=1053') center no-repeat; /* Lista delle img: https://picsum.photos/images */
-    background-size:cover;
-    min-height:100vh;
-    display:flex;
+    background: url('https://unsplash.it/1280/1280/?image=1053') center no-repeat;
+    /* Lista delle img: https://picsum.photos/images */
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     /*font-family: Futura,"Trebuchet MS",Arial,sans-serif */
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  }
-  *, *:before, *:after {box-sizing: inherit; }
+}
 
-  .wrapper {
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.wrapper {
+    margin: auto;
     padding: 20px;
-    max-width: 80em;
+    max-width: 58em;
     line-height: 1.5;
     color: #555;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
-  }
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 h2 {
     margin-top: 1em;
@@ -43,6 +49,7 @@ h2 {
 
 .fretboard {
     position: relative;
+    overflow: auto;
 }
 
 .tuning,
@@ -86,7 +93,34 @@ input.radio {
     font-weight: bold;
 }
 
-.scale-name {
-    text-align: center;
+.scale-data {
+    margin-left: 64px;
+    display: inline;
+}
 
+.scale-name {
+    position: relative;
+    display: inline;
+    left: 50px;
+}
+
+.delete-btn{
+  /*   font-weight: bold; */
+    font-size: 24px;
+    float:right;
+    position: relative;
+    right: 90px;
+}
+
+table {
+    border-collapse: collapse;
+    display:inline;
+    position: relative;
+    left: 120px;
+}
+
+td {
+    border: 1px solid #999;
+    padding: 0px 10px;
+    text-align: center;
 }

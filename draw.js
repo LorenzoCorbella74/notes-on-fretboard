@@ -235,14 +235,44 @@ var Fretboard = function (config) {
             .attr("height", instance.fretboardHeight() + instance.YMARGIN() * 2);
     };
 
+    instance.makeTable = function () {
+        let tbody = d3.select("#" + instance.id, ".scale-data")
+            .append('table')
+            .append('tbody');
+        let riga1 = tbody.append('tr');
+        riga1.selectAll('td')
+            .data(instance.notes.toUpperCase().split(' '))
+            .enter()
+            .append('td')
+            .text((d) => d);
+        let riga2 = tbody.append('tr');
+        riga2.selectAll('td')
+            .data(instance.gradi.split(' '))
+            .enter()
+            .append('td')
+            .text((d) => d);
+
+        return tbody;
+    }
+
     instance.drawScaleName = function(){
         d3.select("#" + instance.id)
                 .append("div")
+                .attr("class", "scale-data")
+                .append("span")
                 .attr("class", "scale-name")
-                .text(`${instance.name.toUpperCase()}  /  Notes:  ${instance.notes.toUpperCase()}  /  Degrees:  ${instance.gradi}`)
+                .text(`${instance.name.toUpperCase()}`) 
+   
+        instance.makeTable();
+
+        d3.select("#" + instance.id)
+        .append("span")
+        .attr("class", "delete-btn")
+        .text("x") // &#x2715
                 .on("click", function (d) {
                     instance.delete(instance.id);
                 });
+
     }
 
     // TASTI
