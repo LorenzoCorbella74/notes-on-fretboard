@@ -24,13 +24,6 @@ html {
     box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
   }
 
-/* body {
-    margin: 0 auto;
-    max-width: 50em;
-    line-height: 1.5;
-    color: #555;
-} */
-
 h2 {
     margin-top: 1em;
     padding-top: 1em;
@@ -87,7 +80,6 @@ input[type=radio],
 input.radio {
     float: left;
     clear: none;
-    /* margin: 2px 0 0 2px; */
 }
 
 .notes-info {

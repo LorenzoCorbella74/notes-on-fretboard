@@ -7,15 +7,9 @@ Tool che permette di affiancare verticalmente più tastiere di chitarra per lo s
 ## Features
 - [x] scelta di scale o arpeggi 
 - [x] visualizzazione delle label delle note con nomi o gradi
-- [ ] Aggiungere modi della scala minore armonica e melodica
+- [x] Aggiungere modi della scala minore armonica e melodica
 - [ ] responsive svg
 - [ ] draggable item
-
-
-### Development
-
-Lanciare tramite qualsiasi server di sviluppo
-
 ## Built With
 
 HTML5, CSS, Javascript, D3.js

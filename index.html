@@ -10,88 +10,91 @@
 
 <body>
     <div class="wrapper">
-    <h2>Sovrapposizione scale/arpeggi</h2>
-    <br>
-    <div style="margin: 16px">
-        <div class="some-class">
-            <input type="radio" name="type" value="scala" checked onchange="getType(value)" id="uno">
-            <label for="uno"> Scala</label>
-            <input type="radio" name="type" value="arpeggio" onchange="getType(value)" id="due">
-            <label for="due"> Arpeggio</label>
+
+        <h2>Sovrapposizione scale/arpeggi</h2>
+        <br>
+        <div style="margin: 16px">
+            <div class="some-class">
+                <input type="radio" name="type" value="scala" checked onchange="getType(value)" id="uno">
+                <label for="uno"> Scala</label>
+                <input type="radio" name="type" value="arpeggio" onchange="getType(value)" id="due">
+                <label for="due"> Arpeggio</label>
+            </div>
+
+            <div class="some-class">
+                <input type="radio" name="visualizzazione" value="nota" onchange="getVisualizzazione(value)" id="tre">
+                <label for="tre"> Note</label>
+                <input type="radio" name="visualizzazione" value="grado" checked onchange="getVisualizzazione(value)"
+                    id="quattro">
+                <label for="quattro"> Gradi</label>
+            </div>
+
+            <select id="myTuning">
+                <option value=""></option>
+                <option value="E_4ths">E 4ths</option>
+                <option value="E_std">E standard</option>
+                <option value="Drop_D">Drop D</option>
+                <option value="G_open">G open</option>
+            </select>
+            <select id="myRoot">
+                <option value=""></option>
+                <option value="c">C</option>
+                <option value="c#">C#/Db</option>
+                <option value="d">D</option>
+                <option value="d#">D#/Eb</option>
+                <option value="e">E</option>
+                <option value="f">F</option>
+                <option value="f#">F#/Gb</option>
+                <option value="g">G</option>
+                <option value="g#">G#/Ab</option>
+                <option value="a">A</option>
+                <option value="a#">A#/Bb</option>
+                <option value="b">B</option>
+            </select>
+            <select id="myArpeggio">
+                <option value="maj">maj</option>
+                <option value="maj7">maj7</option>
+                <option value="7">7</option>
+                <option value="aug">aug</option>
+                <option value="min">min</option>
+                <option value="min7">min7</option>
+                <option value="m7b5">m7b5</option>
+                <option value="dim">dim</option>
+                <option value="dim7">dim7</option>
+            </select>
+            <select id="myScale">
+                <option value=""></option>
+                <option value="lydian">Lydian</option>
+                <option value="lydian-pentatonic">Lydian Pentatonic</option>
+                <option value="major-ionian">Major (Ionian)</option>
+                <option value="major-pentatonic">Major Pentatonic</option>
+                <option value="major-blues">Major Blues</option>
+                <option value="mixolydian">Mixolydian</option>
+                <option value="mixolydian-pentatonic">Mixolydian Pentatonic</option>
+                <option value="dom-pentatonic">Dominant Pentatonic</option>
+                <option value="dorian">Dorian</option>
+                <option value="dorian-pentatonic">Dorian Pentatonic (Minor 6TH)</option>
+                <option value="minor6th-blues-pentatonic">Minor 6TH Blues Pentatonic</option>
+                <option value="rootless9th-pentatonic">Rootless 9TH Pentatonic</option>
+                <option value="aeolian">Aeolian</option>
+                <option value="minor-pentatonic">Minor Pentatonic</option>
+                <option value="minor-blues">Minor Blues</option>
+                <option value="phrygian">Phrygian</option>
+                <option value="phrygian-pentatonic">Phrygian Pentatonic</option>
+                <option value="locrian">Locrian</option>
+                <option value="locrian-pentatonic">Locrian Pentatonic</option>
+                <!-- <option value="japanese">Japanese</option> -->
+                <option value=""></option>
+                <option value="melodic-minor">Melodic Minor</option>
+                <option value="lydian-dominant">Lidia Dominante (4°)</option>
+                <option value="super-locrian">Super Locia (7° diminished WT)</option>
+                <option value="armonic-minor">Armonic Minor</option>
+                <option value="whole-tone">Esatonale</option>
+
+            </select>
+            <button class="button" onclick="addFretboard()"> + </button>
         </div>
-
-        <div class="some-class">
-            <input type="radio" name="visualizzazione" value="nota" onchange="getVisualizzazione(value)" id="tre">
-            <label for="tre"> Note</label>
-            <input type="radio" name="visualizzazione" value="grado" checked onchange="getVisualizzazione(value)" id="quattro">
-            <label for="quattro"> Gradi</label>
-        </div>
-
-        <select id="myTuning">
-            <option value=""></option>
-            <option value="E_4ths">E 4ths</option>
-            <option value="E_std">E standard</option>
-            <option value="Drop_D">Drop D</option>
-            <option value="G_open">G open</option>
-        </select>
-        <select id="myRoot">
-            <option value=""></option>
-            <option value="c">c</option>
-            <option value="c#">c#</option>
-            <option value="d">d</option>
-            <option value="d#">d#</option>
-            <option value="e">e</option>
-            <option value="f">f</option>
-            <option value="f#">f#</option>
-            <option value="g">g</option>
-            <option value="g#">g#</option>
-            <option value="a">a</option>
-            <option value="a#">a#</option>
-            <option value="b">b</option>
-        </select>
-        <select id="myArpeggio">
-            <option value="maj">maj</option>
-            <option value="maj7">maj7</option>
-            <option value="7">7</option>
-            <option value="aug">aug</option>
-            <option value="min">min</option>
-            <option value="min7">min7</option>
-            <option value="m7b5">m7b5</option>
-            <option value="dim">dim</option>
-            <option value="dim7">dim7</option>
-        </select>
-        <select id="myScale">
-            <option value=""></option>
-            <option value="lydian">Lydian</option>
-            <option value="lydian-pentatonic">Lydian Pentatonic</option>
-            <option value="major-ionian">Major (Ionian)</option>
-            <option value="major-pentatonic">Major Pentatonic</option>
-            <option value="major-blues">Major Blues</option>
-            <option value="mixolydian">Mixolydian</option>
-            <option value="mixolydian-pentatonic">Mixolydian Pentatonic</option>
-            <option value="dom-pentatonic">Dominant Pentatonic</option>
-            <option value="dorian">Dorian</option>
-            <option value="dorian-pentatonic">Dorian Pentatonic (Minor 6TH)</option>
-            <option value="minor6th-blues-pentatonic">Minor 6TH Blues Pentatonic</option>
-            <option value="rootless9th-pentatonic">Rootless 9TH Pentatonic</option>
-            <option value="aeolian">Aeolian</option>
-            <option value="minor-pentatonic">Minor Pentatonic</option>
-            <option value="minor-blues">Minor Blues</option>
-            <option value="phrygian">Phrygian</option>
-            <option value="phrygian-pentatonic">Phrygian Pentatonic</option>
-            <option value="locrian">Locrian</option>
-            <option value="locrian-pentatonic">Locrian Pentatonic</option>
-            <!-- <option value="japanese">Japanese</option> -->
-            <option value=""></option>
-            <option value="melodic-minor">Melodic Minor</option>
-            <option value="armonic-minor">Armonic Minor</option>
-            <option value="whole-tone">Esatonale</option>
-
-        </select>
-        <button class="button" onclick="addFretboard()"> + </button>
-    </div>
-
-    <br>
+        <br>
     </div>
 
 </body>
