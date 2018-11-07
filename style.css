@@ -3,7 +3,7 @@
 
 html {
     box-sizing: border-box;
-    background: url('https://unsplash.it/1280/1280/?image=1053') center no-repeat;
+    background: url('https://unsplash.it/1650/1650/?image=1053') center no-repeat; // #1053
     /* Lista delle img: https://picsum.photos/images */
     background-size: cover;
     min-height: 100vh;
