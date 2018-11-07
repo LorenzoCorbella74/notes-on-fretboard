@@ -1,70 +1,70 @@
 // Music
-var allNotes = [ "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"];
-var allNotesEnh = ["c", "db", "d", "eb", "e", "f", "gb", "g", "ab", "a", "bb", "b"];
-var colors              = ["yellow", "orange", "grey", "orange", "red", "salmon", "lightgray"]; // 7 note
-var colors_penta        = ["yellow", "grey", "orange", "red", "lightgray"];                     // 5 note
-var colors_penta_six    = ["yellow", "grey", "orange", "blue", "red", "lightgray"];             // 6 note
-var colors_triads       = ["yellow", "grey", "red"];                                            // 3 note
-var colors_triads_seven = ["yellow", "grey", "red", "lightgray"];                               //  4note
+const allNotes            = [ 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'b'];
+const allNotesEnh         = ['c', 'db', 'd', 'eb', 'e', 'f', 'gb', 'g', 'ab', 'a', 'bb', 'b'];
+const colors              = ['yellow', 'DodgerBlue', '#F4D03F', 'MediumSeaGreen', 'Tomato', '#A569BD', 'lightgray']; // 7 note
+const colors_penta        = ['yellow', 'DodgerBlue', '#F4D03F', 'Tomato', 'lightgray'];                     // 5 note
+const colors_penta_six    = ['yellow', 'DodgerBlue', '#F4D03F', 'SlateBlue', 'Tomato', 'lightgray'];             // 6 note
+const colors_triads_seven = ['yellow', '#F4D03F', 'Tomato', 'lightgray'];                               // 4 note
+const colors_triads       = ['yellow', '#F4D03F', 'Tomato'];                                            // 3 note
 
-var Scales = {
+const Scales = {
     // chords
-    maj: "c e g",
-    maj7: "c e g b",
-    "7": "c e g bb",
-    aug: "c e g#",
-    min: "c eb g",
-    min7: "c eb g bb",
-    dim: "c eb gb",
-    m7b5: "c eb gb bb",
-    dim7: "c eb gb a",
+    'maj':  'c e g',
+    'maj7': 'c e g b',
+    '7':    'c e g bb',
+    'aug':  'c e g#',
+    'min':  'c eb g',
+    'min7': 'c eb g bb',
+    'dim':  'c eb gb',
+    'm7b5': 'c eb gb bb',
+    'dim7': 'c eb gb a',
     // scales
-    "lydian":                "c d e f# g a b",
-    "lydian-pentatonic":     "c d e f# a",          // R 2 3 #4 6
-    "major-ionian":          "c d e f g a b",
-    "major-pentatonic":      "c d e g a",
-    "major-blues":           "c d d# e g a",
-    "mixolydian":            "c d e f g a bb",
-    'mixolydian-pentatonic': "c d e g bb",         // R 2 3 5 b7
-    "dom-pentatonic":        "c e f g bb",         // R 3 4 5 b7
-    "dorian":                "c d eb f g a bb",
-    "dorian-pentatonic":     "c eb f g a",         // R b3 4 5 6
-    "minor6th-blues-pentatonic":"c eb f# g a",     // R b3 4# 5 6
-    "rootless9th-pentatonic":"d eb f g bb",        // 2 b3 4 5 7b
-    "aeolian":               "c d eb f g ab bb",
-    "minor-pentatonic":      "c eb f g bb",
-    "minor-blues":           "c eb f f# g bb",
-    "phrygian":              "c db eb f g ab bb",
-    "phrygian-pentatonic":   "c db f g bb",       // R b2 4 5 b7
-    "locrian":               "c db eb f gb ab bb",
-    "locrian-pentatonic":    "c eb f gb bb",      // R b3 4 b5 b7
-    "japanese":              "c db f g ab",
-    "melodic-minor":         "c d eb f g a b",
-    "lydian-dominant":       "c d e f# g a bb",     // 1	2	3	#4	5	6	b7
-    "super-locrian":         "c db eb e gb ab bb", // 1	b2	b3	b4	b5	b6	b7
-    "armonic-minor":         "c d eb f g ab b",
-    "whole-tone":            "c d e f# g# a#",
+    'lydian':                'c d e f# g a b',
+    'lydian-pentatonic':     'c d e f# a',          // R 2 3 #4 6
+    'major-ionian':          'c d e f g a b',
+    'major-pentatonic':      'c d e g a',
+    'major-blues':           'c d d# e g a',
+    'mixolydian':            'c d e f g a bb',
+    'mixolydian-pentatonic': 'c d e g bb',         // R 2 3 5 b7
+    'dom-pentatonic':        'c e f g bb',         // R 3 4 5 b7
+    'dorian':                'c d eb f g a bb',
+    'dorian-pentatonic':     'c eb f g a',         // R b3 4 5 6
+    'minor6th-blues-pentatonic':'c eb f# g a',     // R b3 4# 5 6
+    'rootless9th-pentatonic':'d eb f g bb',        // 2 b3 4 5 7b
+    'aeolian':               'c d eb f g ab bb',
+    'minor-pentatonic':      'c eb f g bb',
+    'minor-blues':           'c eb f f# g bb',
+    'phrygian':              'c db eb f g ab bb',
+    'phrygian-pentatonic':   'c db f g bb',       // R b2 4 5 b7
+    'locrian':               'c db eb f gb ab bb',
+    'locrian-pentatonic':    'c eb f gb bb',      // R b3 4 b5 b7
+    'japanese':              'c db f g ab',
+    'melodic-minor':         'c d eb f g a b',
+    'lydian-dominant':       'c d e f# g a bb',     // 1	2	3	#4	5	6	b7
+    'super-locrian':         'c db eb e gb ab bb', // 1	b2	b3	b4	b5	b6	b7
+    'armonic-minor':         'c d eb f g ab b',
+    'whole-tone':            'c d e f# g# a#',
     _: function (scale) {
-        return Scales[scale].split(" ");
+        return Scales[scale].split(' ');
     },
 };
 
 // ACCORDATURE
-var Tunings = {
-    E_4ths: ["e2", "a2", "d3", "g3", "c4", "f4"],
-    E_std: ["e2", "a2", "d3", "g3", "b3", "e4"],
-    Drop_D: ["d2", "a2", "d3", "g3", "b3", "e4"],
-    G_open: ["d2", "g2", "d3", "g3", "b4", "d4"]
+const Tunings = {
+    E_4ths: ['e2', 'a2', 'd3', 'g3', 'c4', 'f4'],
+    E_std: ['e2', 'a2', 'd3', 'g3', 'b3', 'e4'],
+    Drop_D: ['d2', 'a2', 'd3', 'g3', 'b3', 'e4'],
+    G_open: ['d2', 'g2', 'd3', 'g3', 'b4', 'd4']
 };
 
-var tuning = document.getElementById('myTuning');
-var root = document.getElementById('myRoot');
-var scale = document.getElementById('myScale');
-var arpeggio = document.getElementById('myArpeggio');
+const tuning = document.getElementById('myTuning');
+const root = document.getElementById('myRoot');
+const scale = document.getElementById('myScale');
+const arpeggio = document.getElementById('myArpeggio');
 
 // DEFAULTS
-var type = 'scala';
-var visualizzazione = 'grado';
+const type = 'scala';
+const visualizzazione = 'grado';
 root.value = 'c';       
 tuning.value = 'E_std'; 
 scale.value = ''; 
@@ -84,12 +84,11 @@ function getType(value) {
 
 function getVisualizzazione(value) {
     visualizzazione = value;
-    console.log(visualizzazione);
 }
 
 function addFretboard() {
     if (root.value && scale.value || root.value && arpeggio.value) {
-        var scala = Fretboard({
+        const scala = Fretboard({
             tuning: Tunings[tuning.value] || Tunings.E_std
         });
         scala.scale(root.value + ' ' + (type == 'arpeggio' ? arpeggio.value : scale.value), type, visualizzazione);
@@ -102,7 +101,7 @@ function addFretboard() {
 // In base al nome della nota calcola lo spostamento sulla tastiera
 function asOffset(note) {
     note = note.toLowerCase();
-    var offset = allNotes.indexOf(note);
+    let offset = allNotes.indexOf(note);
     if (offset === -1) {
         offset = allNotesEnh.indexOf(note);
     }
@@ -112,16 +111,16 @@ function asOffset(note) {
 // calcola che nota è a2 è pari a 33
 // tutte le note hanno l'ottava ES: a2 indica che è il LA sulla 5° corda (a vuoto) !
 function absNote(note) {
-    var octave = note[note.length - 1];
-    var pitch = asOffset(note.slice(0, -1)); // pitch = tono 
+    const octave = note[note.length - 1];
+    let pitch = asOffset(note.slice(0, -1)); // pitch = tono 
     if (pitch > -1) {
         return pitch + octave * 12; // per a2 è 33
     }
 }
 
-// data la  scala "a a# c d e f g" calcola i gradi di cui è composta "t 9b 3 4# 5 6 7"
+// data la  scala 'a a# c d e f g' calcola i gradi di cui è composta 't 9b 3 4# 5 6 7'
 function asDegree(nomescala) {
-    let [root, type] = nomescala.split(" ");
+    let [root, type] = nomescala.split(' ');
     let output;
     switch (type) {
         // arpeggi
@@ -162,47 +161,47 @@ function asDegree(nomescala) {
     return output;
 }
 
-// data la scale ="a lydian" calcola la scala "a a# c d e f g"
+// data la scale ='a lydian' calcola la scala 'a a# c d e f g'
 function asNotes(scale) {
-    let [root, type] = scale.split(" ");
-    var scaleInC = Scales._(type);
-    var offset = asOffset(root);
-    var scaleTransposed = scaleInC.map(function (note) {
+    let [root, type] = scale.split(' ');
+    const scaleInC = Scales._(type);
+    const offset = asOffset(root);
+    const scaleTransposed = scaleInC.map(function (note) {
         return allNotes[(asOffset(note) + offset) % 12];
     });
-    return scaleTransposed.join(" ");
+    return scaleTransposed.join(' ');
 }
 
 // helper per ritornare il valore
-var verbatim = function (d) {
+const verbatim = function (d) {
     return d;
 };
 
 
-// si istanzia l'oggetto "TASTIERA" passandogli un eventuale oggetto di configurazione
-var Fretboard = function (config) {
+// si istanzia l'oggetto 'TASTIERA' passandogli un eventuale oggetto di configurazione
+const Fretboard = function (config) {
     config = config || {};
 
-    var instance = {
+    const instance = {
         frets:      config.frets || 15,                 // numero di tasti da visualizzare
         strings:    config.strings || 6,                // numero di corde
         tuning:     config.tuning || Tunings.E_4ths,    // accordatura
         fretWidth:  50,                                 // larghezza tasti
         fretHeight: 30,                                 // altezza tasti
-        id:         "fretboard-" + Math.floor(Math.random() * 1000000), // id della tastiera
+        id:         'fretboard-' + Math.floor(Math.random() * 1000000), // id della tastiera
         name:       '',                                                 // NOME della scala/arpeggio
         notes:''                                                        // NOTE della scala/arpeggio
     };
 
     instance.fretsWithDots = function () {
-        var allDots = [3, 5, 7, 9, 15, 17, 19, 21];
+        const allDots = [3, 5, 7, 9, 15, 17, 19, 21];
         return allDots.filter(function (v) {
             return v <= instance.frets;
         });
     };
 
     instance.fretsWithDoubleDots = function () {
-        var allDots = [12, 24];
+        const allDots = [12, 24];
         return allDots.filter(function (v) {
             return v <= instance.frets;
         });
@@ -226,17 +225,17 @@ var Fretboard = function (config) {
     // si crea l'istanza SVG
     instance.makeContainer = function () {
         return d3
-            .select(".wrapper")
-            .append("div")
-            .attr("class", "fretboard")
-            .attr("id", instance.id) // id è nell'istanza
-            .append("svg")
-            .attr("width", instance.fretboardWidth() + instance.XMARGIN() * 2)
-            .attr("height", instance.fretboardHeight() + instance.YMARGIN() * 2);
+            .select('.wrapper')
+            .append('div')
+            .attr('class', 'fretboard')
+            .attr('id', instance.id) // id è nell'istanza
+            .append('svg')
+            .attr('width', instance.fretboardWidth() + instance.XMARGIN() * 2)
+            .attr('height', instance.fretboardHeight() + instance.YMARGIN() * 2);
     };
 
     instance.makeTable = function () {
-        let tbody = d3.select("#" + instance.id, ".scale-data")
+        let tbody = d3.select('#' + instance.id, '.scale-data')
             .append('table')
             .append('tbody');
         let riga1 = tbody.append('tr');
@@ -256,22 +255,21 @@ var Fretboard = function (config) {
     }
 
     instance.drawScaleName = function(){
-        d3.select("#" + instance.id)
-                .append("div")
-                .attr("class", "scale-data")
-                .append("span")
-                .attr("class", "scale-name")
+        d3.select('#' + instance.id)
+                .append('div')
+                .attr('class', 'scale-data')
+                .append('span')
+                .attr('class', 'scale-name')
                 .text(`${instance.name.toUpperCase()}`) 
    
         instance.makeTable();
 
-        d3.select("#" + instance.id)
-        .append("span")
-        .attr("class", "delete-btn")
-        .text("x") // &#x2715
-                .on("click", function (d) {
-                    instance.delete(instance.id);
-                });
+        d3.select('#' + instance.id)
+        .append('i')
+        .attr('class', 'delete-btn fa fa-trash')
+        .on('click', function (d) {
+            instance.delete(instance.id);
+        });
 
     }
 
@@ -280,18 +278,18 @@ var Fretboard = function (config) {
         for (i = 0; i <= instance.frets; i++) {
             let x = i * instance.fretWidth + 1 + instance.XMARGIN(); // coordinata x del tasto
             instance.svgContainer
-                .append("line")
-                .attr("x1", x)
-                .attr("y1", instance.YMARGIN())
-                .attr("x2", x)
-                .attr("y2", instance.YMARGIN() + instance.fretboardHeight())
-                .attr("stroke", "lightgray")
-                .attr("stroke-width", i == 0 ? 8 : 2);
-            d3.select("#" + instance.id)
-                .append("text")
-                .attr("class", "fretnum")
-                .style("top", (instance.fretboardHeight() + instance.YMARGIN() + 5) + "px")
-                .style("left", x - 6 + "px")
+                .append('line')
+                .attr('x1', x)
+                .attr('y1', instance.YMARGIN())
+                .attr('x2', x)
+                .attr('y2', instance.YMARGIN() + instance.fretboardHeight())
+                .attr('stroke', 'lightgray')
+                .attr('stroke-width', i == 0 ? 8 : 2);
+            d3.select('#' + instance.id)
+                .append('text')
+                .attr('class', 'fretnum')
+                .style('top', (instance.fretboardHeight() + instance.YMARGIN() + 5) + 'px')
+                .style('left', x - 6 + 'px')
                 .text(i); // è il numero del tasto
         }
     }
@@ -300,26 +298,26 @@ var Fretboard = function (config) {
     instance.drawStrings = function () {
         for (i = 0; i < instance.strings; i++) {
             instance.svgContainer
-                .append("line")
-                .attr("x1", instance.XMARGIN())
-                .attr("y1", i * instance.fretHeight + 1 + instance.YMARGIN())
-                .attr("x2", instance.XMARGIN() + instance.fretboardWidth())
-                .attr("y2", i * instance.fretHeight + 1 + instance.YMARGIN())
-                .attr("stroke", "lightgray")
-                .attr("stroke-width", 1);
+                .append('line')
+                .attr('x1', instance.XMARGIN())
+                .attr('y1', i * instance.fretHeight + 1 + instance.YMARGIN())
+                .attr('x2', instance.XMARGIN() + instance.fretboardWidth())
+                .attr('y2', i * instance.fretHeight + 1 + instance.YMARGIN())
+                .attr('stroke', 'lightgray')
+                .attr('stroke-width', 1);
         }
-        var placeTuning = function (d, i) {
-            return (instance.strings - i) * instance.fretHeight - 5 + "px";
+        const placeTuning = function (d, i) {
+            return (instance.strings - i) * instance.fretHeight - 5 + 'px';
         };
-        d3.select("#" + instance.id)
-            .selectAll(".tuning")
+        d3.select('#' + instance.id)
+            .selectAll('.tuning')
             .data(instance.tuning.slice(0, instance.strings))
-            .style("top", placeTuning)
+            .style('top', placeTuning)
             .text(verbatim)
             .enter()
-            .append("p")
-            .attr("class", "tuning")
-            .style("top", placeTuning)
+            .append('p')
+            .attr('class', 'tuning')
+            .style('top', placeTuning)
             .text(verbatim); // testo nota a vuota (dell'accordatura)
     };
 
@@ -327,76 +325,76 @@ var Fretboard = function (config) {
     instance.drawDots = function () {
 
         // disegna i cerchi delle note...
-        var p = instance.svgContainer
-            .selectAll("circle")
+        let p = instance.svgContainer
+            .selectAll('circle')
             .data(instance.fretsWithDots())
    
 
         // cerchi indicanti 3 5 7 9 tasto
         p.enter()
-            .append("circle")
-            .attr("cx", function (d) {
+            .append('circle')
+            .attr('cx', function (d) {
                 return (d - 1) * instance.fretWidth + instance.fretWidth / 2 + instance.XMARGIN();
             })
-            .attr("cy", instance.fretboardHeight() / 2 + instance.YMARGIN())
-            .attr("r", 4).style("fill", "#ddd");
+            .attr('cy', instance.fretboardHeight() / 2 + instance.YMARGIN())
+            .attr('r', 4).style('fill', '#ddd');
 
         // rimuove i cerchi sul 3 5 7 9  tasto... ?
-        var p = instance.svgContainer
-            .selectAll(".octave")
+        let p2 = instance.svgContainer
+            .selectAll('.octave')
             .data(instance.fretsWithDoubleDots);
 
         // cerchi indicanti il 12 e 24 tasto
-        p.enter()
-            .append("circle")
-            .attr("class", "octave")
-            .attr("cx", function (d) {
+        p2.enter()
+            .append('circle')
+            .attr('class', 'octave')
+            .attr('cx', function (d) {
                 return (d - 1) * instance.fretWidth + instance.fretWidth / 2 + instance.XMARGIN();
             })
-            .attr("cy", instance.fretHeight * 3 / 2 + instance.YMARGIN())
-            .attr("r", 4).style("fill", "#ddd");
-        p.enter()
-            .append("circle")
-            .attr("class", "octave")
-            .attr("cx", function (d) {
+            .attr('cy', instance.fretHeight * 3 / 2 + instance.YMARGIN())
+            .attr('r', 4).style('fill', '#ddd');
+        p2.enter()
+            .append('circle')
+            .attr('class', 'octave')
+            .attr('cx', function (d) {
                 return (d - 1) * instance.fretWidth + instance.fretWidth / 2 + instance.XMARGIN();
             })
-            .attr("cy", instance.fretHeight * 7 / 2 + instance.YMARGIN())
-            .attr("r", 4).style("fill", "#ddd");
+            .attr('cy', instance.fretHeight * 7 / 2 + instance.YMARGIN())
+            .attr('r', 4).style('fill', '#ddd');
     };
 
 
     // Notes on fretboard
-    // "a2" 1 red
+    // 'a2' 1 red
     instance.addNoteOnString = function (note, string, color,tipovisualizzazione, grado) {
-        var absPitch = absNote(note); // ES: 33
-        color = color || "black";
-        var absString = (instance.strings - string);
-        var basePitch = absNote(instance.tuning[absString]); // ES: 52 cioè si prende il valore della nota di partenza (sulla corda a vuoto)
+        const absPitch = absNote(note); // ES: 33
+        color = color || 'black';
+        const absString = (instance.strings - string);
+        const basePitch = absNote(instance.tuning[absString]); // ES: 52 cioè si prende il valore della nota di partenza (sulla corda a vuoto)
         let content = tipovisualizzazione=='nota'?note.substring(0, note.length-1).toUpperCase():grado;
         if ((absPitch >= basePitch) && (absPitch <= basePitch + instance.frets)) {
             instance.svgContainer
-                .append("circle")
-                .attr("class", "note")
-                .attr("stroke-width", 1)
+                .append('circle')
+                .attr('class', 'note')
+                .attr('stroke-width', 1)
                 // 0.75 is the offset into the fret (higher is closest to fret)
-                .attr("cx", (absPitch - basePitch + 0.65) * instance.fretWidth) // calcola la posizione sull'asse X
-                .attr("cy", (string - 1) * instance.fretHeight + 1 + instance.YMARGIN()) // calcola la posizione sull'asse y
-                .attr("r", 10).style("stroke", "#666").style("fill", color)
-                .on("click", function (d) {
+                .attr('cx', (absPitch - basePitch + 0.65) * instance.fretWidth) // calcola la posizione sull'asse X
+                .attr('cy', (string - 1) * instance.fretHeight + 1 + instance.YMARGIN()) // calcola la posizione sull'asse y
+                .attr('r', 12).style('stroke', '#666').style('fill', color)
+                .on('click', function (d) {
                     let fill = this.style.fill;
-                    this.setAttribute("stroke-width", 5 - parseInt(this.getAttribute("stroke-width")));
-                    this.style.fill = fill == color ? "lightgray" : color;
+                    this.setAttribute('stroke-width', 5 - parseInt(this.getAttribute('stroke-width')));
+                    this.style.fill = fill == color ? 'grey' : color;
                 });
 
             instance.svgContainer
-                .append("text")
-                .attr("class", "notes-info")
-                .attr("x", content.length>1?((absPitch - basePitch + 0.56) * instance.fretWidth + "px"):((absPitch - basePitch + 0.60) * instance.fretWidth + "px"))
-                .attr("y", (string - 1) * instance.fretHeight + 1 + instance.YMARGIN() + 3.5 +"px")
-                .attr("font-family", "sans-serif")
-                .attr("font-size", "8px")
-                .attr("fill", "#333" ) // "#2F4F4F" DarkSlateGrey
+                .append('text')
+                .attr('class', 'notes-info')
+                .attr('x', content.length>1?((absPitch - basePitch + 0.54) * instance.fretWidth + 'px'):((absPitch - basePitch + 0.60) * instance.fretWidth + 'px'))
+                .attr('y', (string - 1) * instance.fretHeight + 1 + instance.YMARGIN() + 3.5 +'px')
+                .attr('font-family', 'sans-serif')
+                .attr('font-size', '10px')
+                .attr('fill', '#333' ) // '#2F4F4F' DarkSlateGrey
                 .text(content) // si rimuove l'ultimo carattere
         }
     };
@@ -426,14 +424,15 @@ var Fretboard = function (config) {
 
     instance.addNotes = function (notes, tipo, tipovisualizzazione) {
         console.log(notes, tipo, tipovisualizzazione);
-        var allNotes = notes.split(" ");
+        const allNotes = notes.split(' ');
+        let allDegrees;
         if (tipovisualizzazione == 'grado') {
-            var allDegrees = instance.gradi.split(" ");
+             allDegrees = instance.gradi.split(' ');
         }
         for (i = 0; i < allNotes.length; i++) {
-            var showColor = instance.getRightColor(i, tipo, allNotes.length);
-            var note = allNotes[i];
-            var degree = allDegrees ? allDegrees[i] : null;
+            const showColor = instance.getRightColor(i, tipo, allNotes.length);
+            const note = allNotes[i];
+            const degree = allDegrees ? allDegrees[i] : null;
             for (octave = 2; octave < 7; octave++) {
                 instance.addNote(note + octave, showColor, tipovisualizzazione, degree);
             }
@@ -453,32 +452,32 @@ var Fretboard = function (config) {
     /*  per disegnare accordi */
     instance.placeNotes = function (sequence) {
         // Sequence of string:note
-        // e.g. "6:g2 5:b2 4:d3 3:g3 2:d4 1:g4"
+        // e.g. '6:g2 5:b2 4:d3 3:g3 2:d4 1:g4'
         instance.clear();
-        var pairs = sequence.split(" ");
+        const pairs = sequence.split(' ');
         pairs.forEach(function (pair, i) {
-            let [string, note] = pair.split(":");
+            let [string, note] = pair.split(':');
             string = parseInt(string);
-            instance.addNoteOnString(note, string, i == 0 ? "red" : "black");
+            instance.addNoteOnString(note, string, i == 0 ? 'red' : 'black');
         });
     };
 
 
     instance.clearNotes = function () {
         instance.svgContainer
-            .selectAll(".note")
+            .selectAll('.note')
             .remove();
     };
 
 
     // rimuove quanto disegnato e ridisegna
     instance.clear = function () {
-        d3.select("#" + instance.id).selectAll(".fretnum,.tuning").remove();
+        d3.select('#' + instance.id).selectAll('.fretnum,.tuning').remove();
         instance.svgContainer
-            .selectAll("line")
+            .selectAll('line')
             .remove();
         instance.svgContainer
-            .selectAll("circle")
+            .selectAll('circle')
             .remove();
         instance.draw();
     };
@@ -486,7 +485,7 @@ var Fretboard = function (config) {
     // cancella la singola istanza
     instance.delete = function (id) {
         // instance.clear();
-        d3.select("#" + id).remove();
+        d3.select('#' + id).remove();
     };
 
     instance.draw = function () {

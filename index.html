@@ -6,12 +6,14 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <title>Guitar fretboard with d3.js</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css" integrity="sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT" crossorigin="anonymous">
+    </head>
 
 <body>
     <div class="wrapper">
 
-        <h2>Sovrapposizione scale/arpeggi</h2>
+        <h2><i class="fas fa-music"></i> Sovrapposizione scale/arpeggi</h2>
         <br>
         <div style="margin: 16px">
             <div class="some-class">
@@ -76,7 +78,7 @@
                 <option value="dorian-pentatonic">Dorian Pentatonic (Minor 6TH)</option>
                 <option value="minor6th-blues-pentatonic">Minor 6TH Blues Pentatonic</option>
                 <option value="rootless9th-pentatonic">Rootless 9TH Pentatonic</option>
-                <option value="aeolian">Aeolian</option>
+                <option value="aeolian">Minor (Aeolian)</option>
                 <option value="minor-pentatonic">Minor Pentatonic</option>
                 <option value="minor-blues">Minor Blues</option>
                 <option value="phrygian">Phrygian</option>
@@ -92,7 +94,7 @@
                 <option value="whole-tone">Esatonale</option>
 
             </select>
-            <button class="button" onclick="addFretboard()"> + </button>
+            <button class="button" onclick="addFretboard()"> <i class="fas fa-plus"></i> </button>
         </div>
         <br>
     </div>

@@ -20,19 +20,20 @@ html {
     box-sizing: inherit;
 }
 
+
+
 .wrapper {
     margin: auto;
     padding: 20px;
-    max-width: 58em;
+    max-width: 56em;
     line-height: 1.5;
     color: #555;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+h2, h3 {
     margin-top: 1em;
-    padding-top: 1em;
     color: #333;
 }
 
@@ -50,6 +51,7 @@ h2 {
 .fretboard {
     position: relative;
     overflow: auto;
+    margin-bottom: 16px;
 }
 
 .tuning,
@@ -62,7 +64,7 @@ h2 {
 }
 
 .tuning {
-    left: 8px;
+    left: 5px;
     font-size: 10px;
 }
 
@@ -109,7 +111,8 @@ input.radio {
     font-size: 24px;
     float:right;
     position: relative;
-    right: 90px;
+    right: 8px;
+    bottom: 120px;
 }
 
 table {
@@ -120,7 +123,7 @@ table {
 }
 
 td {
-    border: 1px solid #999;
+    border: 1px solid #c9c9c9;
     padding: 0px 10px;
     text-align: center;
 }
