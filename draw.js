@@ -63,8 +63,8 @@ const scale = document.getElementById('myScale');
 const arpeggio = document.getElementById('myArpeggio');
 
 // DEFAULTS
-const type = 'scala';
-const visualizzazione = 'grado';
+let type = 'scala';
+let visualizzazione = 'grado';
 root.value = 'c';       
 tuning.value = 'E_std'; 
 scale.value = ''; 
