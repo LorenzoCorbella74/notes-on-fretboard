@@ -15,8 +15,7 @@ const Scales = {
     'aug':  'c e g#',
     'min':  'c eb g',
     'min7': 'c eb g bb',
-    'dim':  'c eb gb',
-    'm7b5': 'c eb gb bb',
+    'min7/5b': 'c eb gb bb',
     'dim7': 'c eb gb a',
     // scales
     'lydian':                'c d e f# g a b',
@@ -130,6 +129,9 @@ function asDegree(nomescala) {
         case 'aug': output ='T 3 5#';break;
         case 'min': output ='T 3b 5';break;
         case 'min7': output ='T 3b 5 7b';break;
+        case 'min7/5b': output ='T 3b 5b 7b';break;
+        case 'dim7': output ='T 3b 5b 7bb';break;
+
         // scale
         case 'lydian': output ='T 9 3 4# 5 6 7';break;
         case 'lydian-pentatonic': output ='T 9 3 4# 6';break;       // R 2 3 #4 6
