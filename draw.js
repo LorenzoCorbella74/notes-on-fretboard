@@ -185,7 +185,7 @@ const Fretboard = function (config) {
     config = config || {};
 
     const instance = {
-        frets:      config.frets || 15,                 // numero di tasti da visualizzare
+        frets:      config.frets || 12,                 // numero di tasti da visualizzare
         strings:    config.strings || 6,                // numero di corde
         tuning:     config.tuning || Tunings.E_4ths,    // accordatura
         fretWidth:  50,                                 // larghezza tasti

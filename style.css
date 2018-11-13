@@ -23,9 +23,13 @@ html {
 .wrapper {
     margin: auto;
     padding: 20px;
-    max-width: 56em;
+    max-width: 47em;
     line-height: 1.5;
     color: #555;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
