@@ -42,6 +42,7 @@ const Scales = {
     'lydian-dominant':       'c d e f# g a bb',     // 1	2	3	#4	5	6	b7
     'super-locrian':         'c db eb e gb ab bb', // 1	b2	b3	b4	b5	b6	b7
     'armonic-minor':         'c d eb f g ab b',
+    'phrygian-dominant':     'c db e f g ab bb',
     'whole-tone':            'c d e f# g# a#',
     _: function (scale) {
         return Scales[scale].split(' ');
@@ -157,6 +158,7 @@ function asDegree(nomescala) {
         case 'lydian-dominant': output ='T 2 3 4# 5 6 7b'; break;     
         case 'super-locrian': output ='T 2b 3b 4b 5b 6b 7b';break;     
         case 'armonic-minor': output ='T 2 3b 4 5 6b 7';break;     
+        case 'phrygian-dominant': output ='T 9b 3 4 5 6b 7b';break; // Flamenco!
         case 'whole-tone': output ='T 2 3 4# 5# 6#';break;     
         default:break;
     }
