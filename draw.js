@@ -39,6 +39,7 @@ const Scales = {
     'locrian-pentatonic':    'c eb f gb bb',      // R b3 4 b5 b7
     'japanese':              'c db f g ab',
     'melodic-minor':         'c d eb f g a b',
+    'lydian-5#':             'c d e f# g# a b',     // 1	2	3	#4	5#	6	7
     'lydian-dominant':       'c d e f# g a bb',     // 1	2	3	#4	5	6	b7
     'super-locrian':         'c db eb e gb ab bb', // 1	b2	b3	b4	b5	b6	b7
     'armonic-minor':         'c d eb f g ab b',
@@ -155,6 +156,7 @@ function asDegree(nomescala) {
         case 'locrian-pentatonic': output ='T 3b 4 5b 7b';break; // R b3 4 b5 b7
         case 'japanese': output ='T 2b 4 5 6b';break; // R b3 4 b5 b7
         case 'melodic-minor': output ='T 2 3b 4 5 6 7';break;     
+        case 'lydian-5#': output ='T 2 3 4# 5# 6 7';break;     
         case 'lydian-dominant': output ='T 2 3 4# 5 6 7b'; break;     
         case 'super-locrian': output ='T 2b 3b 4b 5b 6b 7b';break;     
         case 'armonic-minor': output ='T 2 3b 4 5 6b 7';break;     
