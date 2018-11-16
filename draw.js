@@ -1,6 +1,7 @@
 // Music
 const allNotes            = [ 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a', 'a#', 'b'];
 const allNotesEnh         = ['c', 'db', 'd', 'eb', 'e', 'f', 'gb', 'g', 'ab', 'a', 'bb', 'b'];
+const colors_dim          = ['yellow', 'DodgerBlue', '#F4D03F', 'MediumSeaGreen', 'Tomato', '#A569BD', 'lightgray', '#C70039']; // 8 note
 const colors              = ['yellow', 'DodgerBlue', '#F4D03F', 'MediumSeaGreen', 'Tomato', '#A569BD', 'lightgray']; // 7 note
 const colors_penta        = ['yellow', 'DodgerBlue', '#F4D03F', 'Tomato', 'lightgray'];                     // 5 note
 const colors_penta_six    = ['yellow', 'DodgerBlue', '#F4D03F', 'SlateBlue', 'Tomato', 'lightgray'];             // 6 note
@@ -39,12 +40,13 @@ const Scales = {
     'locrian-pentatonic':    'c eb f gb bb',      // R b3 4 b5 b7
     'japanese':              'c db f g ab',
     'melodic-minor':         'c d eb f g a b',
-    'lydian-5':             'c d e f# g# a b',     // 1	2	3	#4	5#	6	7
+    'lydian-5':              'c d e f# g# a b',     // 1	2	3	#4	5#	6	7
     'lydian-dominant':       'c d e f# g a bb',     // 1	2	3	#4	5	6	b7
     'super-locrian':         'c db eb e gb ab bb', // 1	b2	b3	b4	b5	b6	b7
     'armonic-minor':         'c d eb f g ab b',
     'phrygian-dominant':     'c db e f g ab bb',
     'whole-tone':            'c d e f# g# a#',
+    'diminished':            'c d eb f gb g# a b',
     _: function (scale) {
         return Scales[scale].split(' ');
     },
@@ -162,6 +164,7 @@ function asDegree(nomescala) {
         case 'armonic-minor': output ='T 2 3b 4 5 6b 7';break;     
         case 'phrygian-dominant': output ='T 9b 3 4 5 6b 7b';break; // Flamenco!
         case 'whole-tone': output ='T 2 3 4# 5# 6#';break;     
+        case 'diminished': output ='T 2 3b 4 5b 5# 6 7';break;     
         default:break;
     }
     return output;
@@ -420,6 +423,7 @@ const Fretboard = function (config) {
                 case 5: out=colors_penta[i];break;
                 case 6: out=colors_penta_six[i];break;
                 case 7: out=colors[i];break;
+                case 8: out=colors_dim[i];break;
                 default:break;
             }
             return out;
