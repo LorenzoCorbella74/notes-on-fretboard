@@ -91,13 +91,15 @@ function getVisualizzazione(value) {
 
 function addFretboard() {
     if (root.value && scale.value || root.value && arpeggio.value) {
+        // si istanzia una nuova tastiera
         const scala = Fretboard({
             tuning: Tunings[tuning.value] || Tunings.E_std
         });
+        // si genera la diteggiatura
         scala.scale(root.value + ' ' + (type == 'arpeggio' ? arpeggio.value : scale.value), type, visualizzazione);
     }
-    // root.value = '';
-    scale.value = '';
+    // root.value  = '';
+    scale.value    = '';
     arpeggio.value = '';
 }
 
@@ -452,11 +454,11 @@ const Fretboard = function (config) {
     /*  per disegnare SCALE è chiamata all'interno dell'HTML !!!! */
     instance.scale = function (scaleName, tipo, tipovisualizzazione) {
         instance.name = scaleName;
-        let notes = asNotes(scaleName);
+        let notes = asNotes(scaleName); // scaleNAme = "c lydian"
         instance.notes = notes;
-        instance.gradi = asDegree(scaleName);
+        instance.gradi = asDegree(scaleName); // da cambiare...
         instance.clear(); // cancella tutto
-        instance.addNotes(notes,tipo,tipovisualizzazione); // ridisegna le note
+        instance.addNotes(notes,tipo,tipovisualizzazione); // ridisegna le note "c d e f# g a b", "scala", "grado"
     };
 
     /*  per disegnare accordi */
