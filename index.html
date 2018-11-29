@@ -7,14 +7,24 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <title>Guitar fretboard wiTh d3.js</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css" integrity="sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT" crossorigin="anonymous">
-    </head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css" integrity="sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT"
+        crossorigin="anonymous">
+</head>
 
 <body>
     <div id="overlay" onclick="off()">
-       <h1 class="loader"><i class="fas fa-cog fa-spin"></i> Loading Guitar sounds</h1> 
+        <h1 class="loader"><i class="fas fa-cog fa-spin"></i> Loading Guitar sounds</h1>
     </div>
+
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        
+    </div>
+
+    <button class="openbtn" onclick="openNav()"> <i class="fas fa-circle-notch"></i> Circolo Quinte</button>
+    <button class="openbtn" onclick="openNav()"> <i class="fas fa-exchange-alt"></i> Interscambio modale</button>
     <div class="wrapper">
 
         <h2><i class="fas fa-music"></i> Sovrapposizione scale/arpeggi</h2>
@@ -121,6 +131,15 @@
 
     <script src="soundfont-player.min.js"></script>
     <script src="draw.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidepanel").style.width = "480px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+    </script>
 
 </body>
 
