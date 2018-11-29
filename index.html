@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- <script src="d3.js"></script> -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <title>Guitar fretboard wiTh d3.js</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos" crossorigin="anonymous">
@@ -24,9 +25,9 @@
             </div>
 
             <div class="some-class">
-                <input type="radio" name="visualizzazione" value="nota" onchange="getVisualizzazione(value)" id="tre">
+                <input type="radio" name="visualizzazione" value="nota" onchange="setVisualizzazione(value)" id="tre">
                 <label for="tre"> Note</label>
-                <input type="radio" name="visualizzazione" value="grado" checked onchange="getVisualizzazione(value)"
+                <input type="radio" name="visualizzazione" value="grado" checked onchange="setVisualizzazione(value)"
                     id="quattro">
                 <label for="quattro"> Gradi</label>
             </div>
@@ -60,7 +61,7 @@
                 <option value="aug">aug</option>
                 <option value="min">min</option>
                 <option value="min7">min7</option>
-                <option value="m7b5">m7b5</option>
+                <option value="min7/b5">m7b5</option>
                 <option value="dim">dim</option>
                 <option value="dim7">dim7</option>
             </select>
@@ -68,7 +69,7 @@
                 <option value=""></option>
                 <option value="lydian">Lydian</option>
                 <option value="lydian-pentatonic">Lydian Penta</option>
-                <option value="major-ionian">Major (Ionian)</option>
+                <option value="ionian">Major (Ionian)</option>
                 <option value="major-pentatonic">Major Penta</option>
                 <option value="major-blues">Major Blues</option>
                 <option value="mixolydian">Mixolydian</option>
@@ -77,7 +78,7 @@
                 <option value="dorian">Dorian</option>
                 <option value="dorian-pentatonic">Dorian Penta (Min 6Th)</option>
                 <option value="minor6Th-blues-pentatonic">Minor 6Th Blues Penta</option>
-                <option value="rootless9Th-pentatonic">Rootless 9Th Penta</option>
+                <!-- <option value="rootless9Th-pentatonic">Rootless 9Th Penta</option> -->
                 <option value="aeolian">Minor (Aeolian)</option>
                 <option value="minor-pentatonic">Minor Penta</option>
                 <option value="minor-blues">Minor Blues</option>
@@ -88,15 +89,26 @@
                 <!-- <option value="japanese">Japanese</option> -->
                 <option value=""></option>
                 <option value="melodic-minor">Melodic Minor</option>
-                <option value="lydian-5">Lidia 5#</option>
-                <option value="lydian-dominant">Lidia Dominante (4#)</option>
-                <option value="super-locrian">Super Locria (7° dim WT)</option>
+                <option value="dorian-b2">Dorian b2</option>
+                <option value="lydian-aug">Lydian 5#</option>
+                <option value="lydian-dominant">Lydian Dominante (4#)</option>
+                <option value="mixolydian-b6">Mixolydian b6</option>
+                <option value="aeolian-b5">Aeolian b5</option>
+                <option value="super-locrian">Super Locrian (ALTERED)</option>
+
                 <option value=""></option>
-                <option value="armonic-minor">Armonic Minor</option>
+                <option value="harmonic-minor">Harmonic Minor</option>
+                <option value="locrian-#6">Locrian #6</option>
+                <option value="ionian-#5">Ionian #5</option>
+                <option value="dorian-#4">Dorian #4</option>
                 <option value="phrygian-dominant">Phrygian Dominant</option>
+                <option value="lydian-#2">Lydian #2</option>
+                <option value="super-locrian-dim">Super Locrian (Dim)</option>
+
                 <option value=""></option>
                 <option value="whole-tone">Whole Tone</option>
-                <option value="diminished">Diminished</option>
+                <option value="diminished-st">Diminished st</option>
+                <option value="diminished-ts">Diminished ts</option>
 
             </select>
             <button class="button" onclick="addFretboard()"> <i class="fas fa-plus"></i> </button>
@@ -104,8 +116,11 @@
         <br>
     </div>
 
+    <script src="draw.js"></script>
+    <script src="soundfont-player.min.js"></script>
+
 </body>
 
-<script src="draw.js"></script>
+
 
 </html>

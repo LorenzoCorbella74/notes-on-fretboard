@@ -104,7 +104,7 @@ input.radio {
 
 .scale-name {
     position: relative;
-    display: inline;
+   /*  display: inline; */
     left: 50px;
 }
 
