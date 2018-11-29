@@ -143,3 +143,10 @@ td {
     z-index: 2;
     cursor: pointer;
 }
+
+.loader{
+    position: relative;
+    top:30%;
+    left: 40%;
+    color:white;
+}
