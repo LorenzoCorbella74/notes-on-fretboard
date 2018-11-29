@@ -223,6 +223,7 @@ const tuning   = document.getElementById('myTuning');
 const root     = document.getElementById('myRoot');
 const scale    = document.getElementById('myScale');
 const arpeggio = document.getElementById('myArpeggio');
+document.getElementById("overlay").style.display = "block";
 
 // DEFAULTS
 let type            = 'scala';
@@ -231,7 +232,13 @@ root.value          = 'c';
 tuning.value        = 'E_std'; 
 scale.value         = ''; 
 arpeggio.disabled   =  true;
+
+var guitar;
 let ac = new AudioContext();
+Soundfont.instrument(ac,'acoustic_guitar_steel').then(function (guitarDownloaded) {  //  
+    guitar = guitarDownloaded;
+    document.getElementById("overlay").style.display = "none";
+});
 
 function setType(value) {
     type = value;
@@ -733,7 +740,8 @@ const Fretboard = function (config) {
                 .attr("width", 24)
                 .attr("height", 24)
                 //.attr("transform", (d,i) => `rotate(${90})`)
-                .style("fill", color);
+                .style("fill", color)
+                .on('click', ()=> instance.playNote(note));
             }else if (grado=='b3' || grado=='3' || grado=='b5' || grado=='5' || grado=='b7' || grado=='7'){
                 instance.svgContainer
                 .append('rect')
@@ -745,7 +753,8 @@ const Fretboard = function (config) {
                 .attr("y", (string - 1) * instance.fretHeight + instance.YMARGIN()/2 +3.5)
                 .attr("width", 24)
                 .attr("height", 24)
-                .style("fill", color);
+                .style("fill", color)
+                .on('click', ()=>instance.playNote(note));
             } else{
                 instance.svgContainer
                     .append('circle')
@@ -755,11 +764,11 @@ const Fretboard = function (config) {
                     .attr('cx', (absPitch - basePitch + 0.65) * instance.fretWidth) // calcola la posizione sull'asse X
                     .attr('cy', (string - 1) * instance.fretHeight + 1 + instance.YMARGIN()) // calcola la posizione sull'asse y
                     .attr('r', 12).style('stroke', '#666').style('fill', color)
-                    .on('click', function (d) {
+                    .on('click',/*  function (d) {
                         let fill = this.style.fill;
                         this.setAttribute('stroke-width', 5 - parseInt(this.getAttribute('stroke-width')));
                         this.style.fill = fill == color ? 'grey' : color;
-                    });
+                    } */ ()=> instance.playNote(note));
             }
 
             instance.svgContainer
@@ -827,16 +836,21 @@ const Fretboard = function (config) {
         let scaleDISC = scale.split(' ').map(e=>e.toUpperCase()+3);
         let scaleASC = scale.split(' ').map(e=>e.toUpperCase()+3).reverse();
         scaleToBePlayed = scaleDISC.concat(scale[0].toUpperCase()+4,scaleASC);
-        console.log(scaleToBePlayed);
+        // console.log(scaleToBePlayed);
         
-        Soundfont.instrument(ac,'acoustic_guitar_steel').then(function (guitar) {  //  
-            let time = ac.currentTime + 0.2;
+        /* Soundfont.instrument(ac,'acoustic_guitar_steel').then(function (guitar) {  //  */
+            let time = ac.currentTime + 0.2; 
             scaleToBePlayed.forEach(function(note) {
-              console.log("Scheduling...", note, time);
+              // console.log("Scheduling...", note, time);
               guitar.play(note, time, 0.2);
               time += 0.2;
             });
-        });
+       /*  }); */
+    }
+
+    instance.playNote = function(note){
+        let noteToBePlayed = note.toUpperCase();
+        guitar.play(note, ac.currentTime + 0.2, 0.2);
     }
 
     /* 
