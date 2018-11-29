@@ -40,14 +40,20 @@ h2, h3 {
 }
 
 .button {
-    background-color: #008CBA;
-    border: none;
-    color: white;
+    background-color: white;
+    border: 1px solid #008CBA;
+    color: #008CBA;
     padding: 6px 18px;
     margin-left: 0px;
     text-align: center;
     text-decoration: none;
     font-size: 12px;
+}
+
+.button:hover{
+    background-color: #008CBA;
+    border: 1px solid #008CBA;
+    color: white;
 }
 
 .fretboard {
@@ -139,7 +145,7 @@ td {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
     z-index: 2;
     cursor: pointer;
 }

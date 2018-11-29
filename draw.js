@@ -780,6 +780,7 @@ const Fretboard = function (config) {
                 .attr('font-size', '10px')
                 .attr('fill', '#333' ) // '#2F4F4F' DarkSlateGrey
                 .text(content) // si rimuove l'ultimo carattere
+                .on('click', ()=>instance.playNote(note));
 
 
         }
