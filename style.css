@@ -158,16 +158,15 @@ td {
 }
 
 .sidepanel  {
-    width: 0;
+    width: 100%;
     position: fixed;
     z-index: 1;
-    height: 50%;
+    height: 0;
     top: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.95);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
 }
 
 .sidepanel a {

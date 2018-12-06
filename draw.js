@@ -221,6 +221,7 @@ const SCALES = {
 
 const tuning   = document.getElementById('myTuning');
 const root     = document.getElementById('myRoot');
+const rootPanel     = document.getElementById('myRootOnPanel');
 const scale    = document.getElementById('myScale');
 const arpeggio = document.getElementById('myArpeggio');
 document.getElementById("overlay").style.display = "block";
@@ -229,9 +230,24 @@ document.getElementById("overlay").style.display = "block";
 let type            = 'scala';
 let visualizzazione = 'grado';
 root.value          = 'c';       
+rootPanel.value     = 'c';       
 tuning.value        = 'E_std'; 
 scale.value         = ''; 
-arpeggio.disabled   =  true;
+arpeggio.disabled   = true;
+
+let circlePanelOpen = false;
+
+function togglePanel(who) {
+    document.getElementById(who).style.height = !circlePanelOpen ? "480px" : "0";
+    document.getElementById(who).style.padding = !circlePanelOpen ? "20px" : "0" ;
+    circlePanelOpen = !circlePanelOpen;
+}
+
+function produceTable(root){
+    let data = calculateCircleOfFifth('c');
+    // let data = tableModalInterchange();
+    console.log(root, data);
+}
 
 var guitar;
 let ac = new AudioContext();
@@ -257,7 +273,7 @@ function setVisualizzazione(value) {
 }
 
 function addFretboard() {
-    if (root.value && scale.value || root.value && arpeggio.value) {
+    if (type == 'scala' && root.value && scale.value != '' || type == 'arpeggio' && root.value && arpeggio.value != '') {
         // si istanzia una nuova tastiera
         const scala = Fretboard({
             tuning: Tunings[tuning.value] || Tunings.E_std
@@ -511,7 +527,7 @@ function tableModalInterchange() {
         SCALES.ionian,
         SCALES.mixolydian,
         SCALES.dorian,
-        SCALES.eolian,
+        SCALES.aeolian,
         SCALES.phrygian,
         SCALES.locrian
     ];

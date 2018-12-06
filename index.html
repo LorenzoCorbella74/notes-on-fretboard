@@ -19,12 +19,26 @@
     </div>
 
     <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        
+        <a href="javascript:void(0)" class="closebtn" onclick="togglePanel('mySidepanel')">×</a>
+        <select id="myRootOnPanel" onchange="produceTable(value)">
+            <option value=""></option>
+            <option value="c">C</option>
+            <option value="c#">C#/Db</option>
+            <option value="d">D</option>
+            <option value="d#">D#/Eb</option>
+            <option value="e">E</option>
+            <option value="f">F</option>
+            <option value="f#">F#/Gb</option>
+            <option value="g">G</option>
+            <option value="g#">G#/Ab</option>
+            <option value="a">A</option>
+            <option value="a#">A#/Bb</option>
+            <option value="b">B</option>
+        </select>
     </div>
 
-    <button class="openbtn" onclick="openNav()"> <i class="fas fa-circle-notch"></i> Circolo Quinte</button>
-    <button class="openbtn" onclick="openNav()"> <i class="fas fa-exchange-alt"></i> Interscambio modale</button>
+    <button class="openbtn" onclick="togglePanel('mySidepanel')"> <i class="fas fa-circle-notch"></i> Circolo Quinte</button>
+    <button class="openbtn" onclick="togglePanel('mySidepanel')"> <i class="fas fa-exchange-alt"></i> Interscambio modale</button>
     <div class="wrapper">
 
         <h2><i class="fas fa-music"></i> Sovrapposizione scale/arpeggi</h2>
@@ -131,15 +145,6 @@
 
     <script src="soundfont-player.min.js"></script>
     <script src="draw.js"></script>
-    <script>
-        function openNav() {
-            document.getElementById("mySidepanel").style.width = "480px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidepanel").style.width = "0";
-        }
-    </script>
 
 </body>
 
